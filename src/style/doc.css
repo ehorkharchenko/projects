@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+body {
+  background-color: rgb(249, 249, 249);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+header {
+  width: 100%;
+  height: 60px;
+  background-color: #000;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.view-catalog {
+  align-self: end;
+  grid-row: 2;
+  width: 182px;
+  height: 25px;
+  background-color: #000;
+  border: none;
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 2px;
+  /* text-transform: uppercase; */
+  color: #fff;
+  cursor: pointer;
+}
+
+.filter {
+  width: 100%;
+  max-width: 1020px;
+  margin: 25px auto;
+  border-bottom: 1px solid rgb(240, 240, 240);
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+.filter-bttn {
+  width: 145px;
+  padding: 5px;
+  border: none;
+  background: none;
+  display: grid;
+  grid-template-columns: 30px 115px;
+  align-items: center;
+  justify-items: center;
+  cursor: pointer;
+  outline: none;
+  background-color: rgb(240, 240, 240);
+}
+
+.filter-bttn>img {
+  width: 20px;
+}
+
+.filter-bttn>span {
+  font-family: "Roboto";
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin: -2px 0 0 0;
+  justify-self: start;
+}
+
+.logo {
+  display: grid;
+}
+
+.logo>span:nth-child(1) {
+  font-family: "Roboto";
+  font-weight: 700;
+  font-size: 40px;
+  letter-spacing: 9px;
+  color: #FFF; 
+}
+
+.logo>span:nth-child(1)>span {
+  width: 15px;
+  line-height: 40px;
+  display: inline-block;
+  transform: rotate(180deg);
+}
+
+.logo>span:nth-child(2) {
+  font-family: "Roboto";
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #FFF;
+}
+
+main {
+    
+}
+
+.content {
+  margin: auto;
+  max-width: 1020px;
+  display: flex;
+  grid-gap: 20px;
+  flex-wrap: wrap;
+}
+.product {
+  width: 320px;
+  height: 400px;
+  background-color: #FFF;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 50px 300px 50px;
+}
+.product>p {
+  font-family: "Roboto";
+}
+.product>p>span:nth-child(1) {
+  font-family: "Maven Pro";
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+.product>p>span:nth-child(2) {
+  font-family: "PT Sans Narrow";
+  font-weight: 500;
+  font-size: 20px;
+  margin: 0 2px;
+}
+.element {
+
+}
+
+.buy-bttn {
+  width: 100%;
+  height: 50px;
+  background-color: green;
+  border: none;
+  font-family: "Roboto";
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 2px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.buy-bttn:active {
+  background-color: #eee;
+  color: #aaa;
+}
+
+footer {
+  width: calc( 100% - 20px );
+  padding: 0 10px;
+  background-color: rgb(250, 250, 250);
+}

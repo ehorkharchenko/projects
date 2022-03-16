@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> V Λ I L&ensp; </title>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600&display=swap');
+
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+      body {
+        background-color: rgb(249, 249, 249);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        outline: none;
+      }
+
+      header {
+        width: 100%;
+        height: 60px;
+        margin: 0 0 25px 0;
+        background-color: #000;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+      }
+
+      .logo {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        align-items: center;
+      }
+
+      .logo>div {
+        padding: 5px;
+        font-family: "Roboto";
+        font-weight: 700;
+        font-size: 40px;
+        letter-spacing: 9px;
+        color: #FFF;
+      }
+
+      .logo>div:nth-child(1) {
+        margin: 0 -12px 0 0;
+      }
+
+      .logo>div:nth-child(2) {
+        margin: 0 -12px 0 0;
+      }
+
+      .logo>div:nth-child(3) {
+        margin: 0 -6px 0 2px;
+      }
+
+      .logo>div:nth-child(4) {
+        margin: 0 0 0 -5px;
+      }
+
+      .content {
+        margin: auto;
+        max-width: 1230px;
+        display: flex;
+        grid-gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .product {
+        width: 290px;
+        height: 400px;
+        background-color: #FFF;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 250px 50px 50px 50px;
+      }
+
+      .product>img {
+        align-self: center;
+        justify-self: center;
+        height: 60%;
+      }
+
+      .product>p:nth-child(2) {
+        margin-left: 25px;
+      }
+
+      .product>p:nth-child(3) {
+        justify-self: end;
+        margin-right: 20px;
+      }
+
+      .product>p {
+        font-family: "Maven Pro";
+        font-weight: 400;
+        letter-spacing: 1px;
+      }
+
+      .product>p>span:nth-child(1) {
+        font-family: "Maven Pro";
+        font-weight: 400;
+        font-size: 20px;
+        letter-spacing: 1px;
+      }
+
+      .product>p>span:nth-child(2) {
+        font-family: "PT Sans Narrow";
+        font-weight: 500;
+        font-size: 20px;
+        margin: 0 2px;
+      }
+
+      .buy-bttn {
+        width: 100%;
+        height: 50px;
+        background-color: green;
+        border: none;
+        font-family: "Roboto";
+        font-weight: 700;
+        font-size: 16px;
+        letter-spacing: 2px;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      .buy-bttn:active {
+        background-color: #eee;
+        color: #aaa;
+      }
+
+      details {
+	      position: relative;
+	      width: 280px;
+      }
+
+      details[open] {
+	       z-index: 1;
+      }
+
+      summary {
+	      padding: 20px 1rem 1rem 10px;
+	      cursor: pointer;
+	      border: 1px solid #eee;
+	      background-color: rgb(245, 245, 245);
+	      list-style: none;
+      }
+
+      summary::-webkit-details-marker {
+	      display: none;
+      }
+
+      details[open] summary:before {
+	      content: '';
+	      display: block;
+	      width: 100vw;
+	      height: 100vh;
+	      background: transparent;
+	      position: fixed;
+	      top: 0;
+	      left: 0;
+      }
+
+      summary:after {
+	      content: '';
+	      display: inline-block;
+	      float: right;
+	      width: .5rem;
+	      height: .5rem;
+	      border-bottom: 1px solid currentColor;
+	      border-left: 1px solid currentColor;
+	      border-bottom-left-radius: 2px;
+	      transform: rotate(45deg) translate(50%, 0%);
+	      transform-origin: center center;
+	      transition: transform ease-in-out 100ms
+      }
+
+      summary:focus {
+	      outline: none;
+      }
+
+      details[open] summary:after {
+	       transform: rotate(-45deg) translate(0%, 0%);
+      }
+
+      ul {
+	      width: 100%;
+	      background-color: rgb(245, 245, 245);
+	      position: absolute;
+	      top: calc(100%);
+	      left: 0;
+	      padding: 1rem;
+	      margin: 10px 0;
+	      box-sizing: border-box;
+	      border: 1px solid #eee;
+	      max-height: 200px;
+	      overflow-y: auto;
+        font-family: "Roboto";
+        font-weight: 400;
+        letter-spacing: 2px;
+        color: #151515;
+      }
+
+      li {
+	      margin: 0;
+	      padding: 1rem 0;
+	      border-bottom: 1px solid #ddd;
+        list-style: none;
+      }
+
+      li:first-child {
+	      padding-top: 0;
+      }
+
+      li:last-child {
+	      padding-bottom: 0;
+	      border-bottom: none;
+      }
+
+      /* FAKE SELECT */
+
+      summary.radios {
+	      counter-reset: radios;
+      }
+
+      input[type=radio] {
+	      counter-increment: radios;
+	      appearance: none;
+	      display: none;
+        font-family: "Roboto";
+        font-weight: 400;
+        letter-spacing: 2px;
+        color: #151515;
+      }
+
+      input[type=radio]:checked {
+	      display: inline;
+      }
+
+      input[type=radio]:after {
+	      content: attr(title);
+	      display: inline;
+	      font-size: 14px;
+      }
+
+      ul.list {
+	      counter-reset: labels;
+      }
+
+      label {
+	      width: 100%;
+	      display: block;
+	      cursor: pointer;
+      }
+
+      .order-input {
+        margin: 10px 0;
+        padding: 0 10px;
+        width: 260px;
+        height: 40px;
+        background-color: rgb(245, 245, 245);
+        border: 1px solid #eee;
+        font-family: "Montserrat";
+        font-weight: 400;
+        font-size: 13px;
+        letter-spacing: 2px;
+        color: #151515;
+      }
+
+      .to-order-bttn {
+        margin: 20px 0;
+        width: 150px;
+        height: 50px;
+        background-color: green;
+        border: none;
+        border-radius: 2px;
+        font-family: "Roboto";
+        font-weight: 500;
+        font-size: 20px;
+        letter-spacing: 2px;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      .to-order-bttn:active {
+        background-color: #eee;
+        color: #ccc;
+      }
+
+      .buy-form {
+        margin: auto;
+        padding: 10px 20px;
+        max-width: 1000px;
+        background-color: #FFF;
+        display: grid;
+      }
+
+      .buy-form>h1 {
+        font-family: "Maven Pro";
+        font-weight: 400;
+      }
+
+      .buy-form>h2 {
+        font-family: "Montserrat";
+        font-weight: 400;
+        font-size: 24px;
+        letter-spacing: 2px;
+        color: #000;
+      }
+
+      .delivery {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto auto;
+        grid-row-gap: 30px;
+      }
+
+      .delivery-heading {
+        margin: 10px 3px -10px 3px;
+        width: 190px;
+        display: grid;
+        grid-template-columns: 140px 50px;
+        align-items: center;
+      }
+
+      .delivery-heading>h2 {
+        font-family: "Montserrat";
+        font-weight: 400;
+        font-size: 24px;
+        letter-spacing: 2px;
+        color: #000;
+      }
+
+      .delivery-heading>img {
+        width: 40px;
+        border-radius: 3px;
+      }
+
+      .address {
+        width: 300px;
+        display: flex;
+        justify-content: space-between;
+      }
+        .address>input {
+          padding: 0 5px;
+          height: 35px;
+          border: 1px solid #ddd;
+        }
+
+        .address>input:nth-child(1) {
+          width: 150px;
+        }
+
+        .address>input:nth-child(2) {
+          margin: 0 10px;
+          width: 45px;
+        }
+
+        .address>input:nth-child(3) {
+          width: 45px;
+        }
+
+      .buy-form>p {
+        /* margin: -10px 0 0 0; */
+        font-family: "Montserrat";
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 25px;
+        letter-spacing: 1px;
+        color: #444;
+      }
+
+
+      .comment-input {
+        width: 260px;
+        height: 170px;
+        padding: 10px;
+        background-color: rgb(245, 245, 245);
+        border: none;
+        letter-spacing: 1px;
+        resize: none;
+      }
+
+      footer {
+        margin: auto;
+        max-width: 1020px;
+        height: 150px;
+        /* background-color: #fff; */
+        display: grid;
+        align-items: center;
+        justify-items: center;
+      }
+
+      .inst {
+        width: 190px;
+        /* background-color: rgb(245, 245, 245);
+        border: 1px solid #ddd; */
+        display: grid;
+        grid-template-columns: 60px 110px;
+        align-items: center;
+        justify-items: center;
+        cursor: pointer;
+      }
+
+      .inst>img {
+        width: 50px;
+      }
+
+      .inst>span {
+        font-family: "Gloria Hallelujah";
+        letter-spacing: 2px;
+        margin: -2px 0 0 0;
+      }
+
+    </style>
+  </head>
+  <body>
+    <header>
+        <div class="logo">
+          <div>V</div>
+          <div>Λ</div>
+          <div>I</div>
+          <div>L</div>
+        </div>
+    </header>
+    <div id="content">
+
+      <template v-if=" list.visible ">
+        <form class="buy-form" onsubmit=" event.preventDefault() ">
+          <h1> Вибрано: {{ list.product.product__name }} </h1>
+          <h2> Получатель </h2>
+          <input class="order-input" id="surname" type="text" placeholder="Фамилия">
+          <input class="order-input" id="name" type="text" placeholder="Имя">
+          <input class="order-input" id="midname" type="text" placeholder="Отчество">
+          <div class="">
+            <label> номер телефона <sup>*</sup> </label>
+            <input class="order-input" id="phone__number" data-tel-input type="tel" name="tel" placeholder="+38 (000) 000 - 00 - 00" max="23">
+          </div>
+          <div class="delivery">
+            <div class="delivery-heading">
+              <h2> Доставка </h2>
+              <img src="/img/nova-poshta-logo.svg" alt="Логотип Новой Почты">
+            </div>
+            <details class="custom-select">
+              <summary class="radios">
+                <input type="radio" name="delivery__method__item" id="default" title="Виберите способ доставки" checked>
+                <input type="radio" name="delivery__method__item" id="delivery__method__selected" :title="order__data.delivery__method">
+              </summary>
+              <ul class="list">
+                <li>
+                  <label for="delivery__method__selected" v-on:click=" order__data.delivery__method = 'В отделение' "> В отделение </label>
+                </li>
+                <!-- <li>
+                  <label for="delivery__method__selected" v-on:click=" order__data.delivery__method = 'В поштомате' "> В поштомат </label>
+                </li> -->
+                <li>
+                  <label for="delivery__method__selected" v-on:click=" order__data.delivery__method = 'Курьером' "> Курьером </label>
+                </li>
+              </ul>
+            </details>
+            <details class="custom-select">
+              <summary class="radios">
+                <input type="radio" name="city" id="default" title="Виберите ваш город" checked>
+                <input type="radio" name="city" id="selected__city" :title="order__data.city__name">
+              </summary>
+              <ul class="list">
+                <li>
+                  <input type="text" placeholder="найти"
+                         onkeypress=" app.getCities( event.target.value ) ">
+                </li>
+                <li v-for=" city in city__list ">
+                  <label for="selected__city" v-on:click=" order__data.city__name = city.name "> {{ city.name }} </label>
+                </li>
+              </ul>
+            </details>
+            <template v-if=" order__data.delivery__method === 'В отделение' ">
+              <details class="custom-select">
+                <summary class="radios">
+                  <input type="radio" name="choose__warehouse" id="default" title="Виберите отделение" checked>
+                  <input type="radio" name="choose__warehouse" id="selected__warehouse" :title="order__data.warehouse__name">
+                </summary>
+                <ul class="list">
+                  <li>
+                    <input type="text" placeholder="найти"
+                           onkeyup=" app.getWarehouses( 'Branch', event.target.value ) ">
+                  </li>
+                  <li v-for=" warehouse_n in warehouse__list ">
+                    <label for="selected__warehouse" v-on:click=" order__data.warehouse__name = warehouse_n "> {{ warehouse_n }} </label>
+                  </li>
+                </ul>
+              </details>
+            </template>
+            <template v-else-if=" order__data.delivery__method === 'В поштомате' ">
+              <details class="custom-select">
+                <summary class="radios">
+                  <input type="radio" name="choose__poshtomat" id="default" title="Виберите поштомат" checked>
+                  <input type="radio" name="choose__poshtomat" id="selected__postomat" :title="order__data.warehouse__name">
+                </summary>
+                <ul class="list">
+                  <li>
+                    <input type="text" placeholder="найти"
+                           onkeyup=" app.getWarehouses( 'Postomat', event.target.value ) ">
+                  </li>
+                  <li v-for=" warehouse_n in warehouse__list ">
+                    <label for="selected__postomat" v-on:click=" order__data.warehouse__name = warehouse_n "> {{ warehouse_n }} </label>
+                  </li>
+                </ul>
+              </details>
+            </template>
+            <template v-else-if=" order__data.delivery__method === 'Курьером' ">
+              <div class="address">
+                <input type="text" placeholder="улица">
+                <input type="text" placeholder="дом">
+                <input type="text" placeholder="кв.">
+              </div>
+            </template>
+          </div>
+          <h2> Оплата </h2>
+          <p>
+            оплата осоществляется по средствам <br>
+            наложеного платежа в отделении <br>
+            Новой Почты после получения <br>
+            наличными или банковской картой
+          </p>
+          <h2> Комментарий </h2>
+          <textarea class="comment-input" id="comment-input" cols="75" rows="5" placeholder="Уточнение(я) к заказу"></textarea>
+          <button class="to-order-bttn" v-on:click=" regOrder() "> заказать </button>
+        </form>
+      </template>
+      <div v-else class="content">
+        <div class="product" v-for="product in catalog">
+          <img :src="product.product__img" alt="Product img">
+          <p> {{ product.product__name }} </p>
+          <p> <span>{{ product.product__cost }}</span><span> &#8372; </span>  </p>
+          <button class="buy-bttn" v-on:click=" list.visible = true; list.product = product "> Купить в один клик! </button>
+        </div>
+      </div>
+
+    </div>
+    <footer>
+      <div class="inst" onclick=" window.open('https:\/\/instagram.com/vail_inst') ">
+        <img src="/img/inst-icon.svg" alt="Instagram logo">
+        <span> Instagram </span>
+      </div>
+    </footer>
+    <script src="/src/script/phone-input-mask.js"></script>
+    <script src="https://cdn.socket.io/3.1.3/socket.io.min.js"
+            integrity="sha384-cPwlPLvBTa3sKAgddT6krw0cJat7egBga3DJepJyrLl4Q9/5WLra3rrnMcyTyOnh"
+            crossorigin="anonymous"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script>
+
+      const socket = io()
+
+      const app = new Vue({
+        el: "#content",
+        data: {
+          getCities( city__name ) {
+
+            const XHR = new XMLHttpRequest()
+
+            XHR.open( "POST", "https://api.novaposhta.ua/v2.0/json/" )
+
+            XHR.onload = function () {
+
+                const resp = JSON.parse( XHR.response )
+
+                resp.data[0].Addresses.map( city => {
+
+                  app.city__list.push({ name: city.Present, ref: city.DeliveryCity })
+
+                  if ( app.city__list.length > 5 )
+                    app.city__list.shift()
+
+                })
+            }
+
+            XHR.send(
+              JSON.stringify({
+                "apiKey": "ff2690726a045148f04288dc3b46796d",
+                "modelName": "Address",
+                "calledMethod": "searchSettlements",
+                "methodProperties": {
+                  "Language": "ru",
+                  "CityName": city__name,
+                  "Limit": 5
+                }
+              })
+            )
+
+          },
+          getWarehouses( warehouse__type, warehouse__number ) {
+
+            const XHR = new XMLHttpRequest()
+
+            XHR.open( "POST", "https://api.novaposhta.ua/v2.0/json/" )
+
+            XHR.onload = function () {
+
+                const resp = JSON.parse( XHR.response )
+
+                const warehouse = resp.data.filter( item => item.CategoryOfWarehouse === warehouse__type && item.Number === warehouse__number )[0]
+
+                app.warehouse__list.unshift( warehouse.DescriptionRu )
+
+                if ( app.warehouse__list > 5 )
+                  app.warehouse__list.pop()
+
+            }
+
+            // "8d5a980d-391c-11dd-90d9-001a92567626"
+            XHR.send(
+              JSON.stringify({
+                "apiKey": "ff2690726a045148f04288dc3b46796d",
+                "modelName": "Address",
+                "calledMethod": "getWarehouses",
+                "methodProperties": {
+                  "Language": "ru",
+                  "CityRef": app.city__list[0].ref
+                }
+              })
+            )
+
+          },
+          regOrder() {
+
+            let data__body = {}
+
+            const surname = document.getElementById("surname").value
+            const name = document.getElementById("name").value
+            const midname = document.getElementById("midname").value
+
+            const date = `${ new Date().getFullYear() }.${ new Date().getMonth() + 1 }.${ new Date().getDate() }`
+            const time = `${ (new Date().getHours() < 10) ? "0" + new Date().getHours(): new Date().getHours() }:${ (new Date().getMinutes() < 10) ? "0" + new Date().getMinutes(): new Date().getMinutes() }`
+
+            if ( 2 <= surname.length ) {
+
+              if ( 2 <= name.length ) {
+
+                if ( 2 <= midname.length ) {
+
+                  data__body.order__date = `${ date }, ${ time }`
+                  data__body.full__name = `${ surname } ${ name } ${ midname }`
+
+                  const phone__number = `+${ document.getElementById("phone__number").value }`
+
+                  data__body.phone__number = phone__number
+                  data__body.order = app.list.product.product__name
+                  data__body.delivery__method = app.order__data.delivery__method
+                  data__body.city = app.order__data.city__name
+                  data__body.branch__number__or__address = app.order__data.warehouse__name
+                  data__body.comment = document.getElementById("comment-input").value
+                }
+              }
+            }
+
+            socket.emit( "register order", data__body, function ( resp ) {
+
+              if ( resp.status === "ok" ) {
+
+                window.location.pathname = ""
+
+              } else {
+
+                 alert( "Извините произошла ошибка, попробуйте пожалуйста ещё раз" )
+              }
+
+            })
+          },
+          city__list: [],
+          warehouse__list: [],
+          order__data: {
+            phone__number: "",
+            delivery__method: "",
+            city__name: "",
+            city__ref: "",
+            warehouse__name: ""
+          },
+          list: {
+            visible: false,
+            product: "",
+          },
+          catalog: []
+        }
+      })
+
+      socket.on( "get catalog", catalog => app.catalog = catalog )
+    </script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "vail.com.ua",
+  "version": "0.0.1",
+  "main": "host.js",
+  "scripts": {
+    "test": "start"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "fs": "^0.0.1-security",
+    "koa": "^2.13.3",
+    "koa-router": "^10.1.1",
+    "mongoose": "^6.0.9",
+    "socket.io": "^4.2.0"
+  }
+}
